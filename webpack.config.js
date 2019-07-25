@@ -2,7 +2,7 @@ const path = require('path');
 const rules= [
   {
     test:/\.tsx?/,
-    exculde: /node_modules/,
+    exclude: /node_modules/,
     loader: 'babel-loader'
   }
 ]
@@ -15,7 +15,7 @@ module.exports = {
     filename:'bundle.js'
   },
   module:{rules},
-  resolve: {extentions:['.ts','.tsx','.js']},
+  resolve: {extensions:['.ts','.tsx','.js']},
   devServer:{
     contentBase:'./',
     port:5000
