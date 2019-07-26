@@ -33,6 +33,11 @@ export default function App(): JSX.Element {
     newTodos[index].complete = !newTodos[index].complete;
     setTodos(newTodos);
   }
+  const deleteTodo = (index:number):void =>{
+    const newTodos:Itodo[] =[...todos];
+    newTodos.splice(index,1);
+    setTodos(newTodos);
+  }
 
   return (
     <Fragment>
@@ -47,6 +52,7 @@ export default function App(): JSX.Element {
               <Fragment key={index}>
                 <div style={{textDecoration: todo.complete ?"line-through":""}}>{todo.text}
                 <input type="button" value={todo.complete ? "Incomplete":"Complete"} onClick={()=>completeTodo(index)}/> 
+                <input type="button" value="delete" onClick={()=>deleteTodo(index)}/>
                 </div>
               </Fragment>
             );
