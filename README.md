@@ -6,8 +6,14 @@ npm i typescript @types/node @types/react @types/react-dom
 -typescript definition for node , react and react-dom
 
 ## Typescript in react project from stratch:
-Npm init – y
-Create index.html, webpack.config.js .babelrc
+- To create new project 
+```
+npm init – y
+```
+- Create index.html, webpack.config.js & .babelrc
+
+- Shortcuts vs code (just for reference)
+
 Html page->
 ! tab 
 Div#app-root tab
