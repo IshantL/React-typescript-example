@@ -52,7 +52,7 @@ export default function App(): JSX.Element {
               <Fragment key={index}>
                 <div style={{textDecoration: todo.complete ?"line-through":""}}>{todo.text}
                 <input type="button" value={todo.complete ? "Incomplete":"Complete"} onClick={()=>completeTodo(index)}/> 
-                <input type="button" value="delete" onClick={()=>deleteTodo(index)}/>
+                <input type="button" value="X" onClick={()=>deleteTodo(index)}/>
                 </div>
               </Fragment>
             );
