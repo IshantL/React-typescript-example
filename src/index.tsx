@@ -28,6 +28,12 @@ export default function App(): JSX.Element {
     const newTodos:Itodo[] = [...todos, { text:text, complete:false}]
     setTodos(newTodos);
   }
+  const completeTodo = (index:number):void =>{
+    const newTodos:Itodo[] = [...todos]
+    newTodos[index].complete = !newTodos[index].complete;
+    setTodos(newTodos);
+  }
+
   return (
     <Fragment>
       <h1>Todo List</h1>
@@ -37,7 +43,13 @@ export default function App(): JSX.Element {
       </form>
       <section>
         {todos.map((todo:Itodo,index:number)=>{
-            return <div>{todo.text}</div>;
+            return (
+              <Fragment key={index}>
+                <div>{todo.text}
+                <input type="button" value={todo.complete ? "Incomplete":"Complete"} onClick={()=>completeTodo(index)}/> 
+                </div>
+              </Fragment>
+            );
         })}
       </section>
     </Fragment>
