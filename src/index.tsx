@@ -25,7 +25,7 @@ export default function App(): JSX.Element {
     setValue('');
   }
   const addTodo =(text:string) =>{
-    const newTodos:Itodo[] = [...todos, { text, complete:false}]
+    const newTodos:Itodo[] = [...todos, { text:text, complete:false}]
     setTodos(newTodos);
   }
   return (
@@ -35,6 +35,11 @@ export default function App(): JSX.Element {
         <input type="text" value={value} onChange={e => setValue(e.target.value)} required/>
         <button type="submit">Add Todo</button>
       </form>
+      <section>
+        {todos.map((todo:Itodo,index:number)=>{
+            return <div>{todo.text}</div>;
+        })}
+      </section>
     </Fragment>
   );
 }
