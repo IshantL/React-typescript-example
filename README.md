@@ -95,4 +95,6 @@ In package.json
 We have to install dependencies
 npm i @babel/core @babel/preset-env @babel/preset-typescript webpack webpack-cli webpack-dev-server babel-loader react react-dom @types/react @types/react-dom
 
+-- use typescript for type checking
+
 
