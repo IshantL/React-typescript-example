@@ -2,7 +2,7 @@ import React, { Fragment, useState } from "react";
 import ReactDom from "react-dom";
 import { strict } from "assert";
 import { string } from "prop-types";
-
+import Context from './Context';
 const sum = (a: number, b: number): number => {
   return a + b;
 };
@@ -54,6 +54,8 @@ export default function App(): JSX.Element {
                 <input type="button" value={todo.complete ? "Incomplete":"Complete"} onClick={()=>completeTodo(index)}/> 
                 <input type="button" value="X" onClick={()=>deleteTodo(index)}/>
                 </div>
+                <div><h1>Context App</h1></div>
+                <Context/>
               </Fragment>
             );
         })}
